@@ -8,9 +8,8 @@ def getAdjacentPositiveSamples():
     entries = list(map(int, input("Enter the entries in a single line (separated by space):\n").split()))
 
     # Check inputs
-    if not (isinstance(rows,int) and isinstance(cols,int) and isinstance(entries,list)):
-        print("Invalid input")
-        return {}
+    if not len(entries) == rows*cols:
+        raise Exception(f"number of entries should be {rows*cols}. But got {len(entries)}")
 
     # converts array into matrix
     import numpy as np
